@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="pursuit.js"></script>
+
+<script type="text/javascript">
+
+function typeCheck() {
+    if (document.getElementById('zig').checked) {
+        document.getElementById('ifZig').style.display = 'block';
+    }
+    else document.getElementById('ifZig').style.display = 'none';
+
+    callUpdate();
+
+}
+
+</script>
+</head>
+
+<body>
+  <input type="radio" onclick="javascript:typeCheck();" name="pathType" id="zig" checked> ZIG <input type="radio" onclick="javascript:typeCheck();" name="pathType" id="line"> LINE
+
+  <div id="ifZig">
+  Zig Height <input id="zigHeight" type="range" name="zigheight" min="70" max="500" step="10" value="500">
+&nbsp;&nbsp;
+  Zig Width <input id="zigWidth" type="range" name="zigwidth" min="50" max="1000" step="10" value="300">
+
+  </div>
+  <br />
+Predator Spring Strength <input id="kozStick" type="range" name="inertia" min=".00" max=".2" step=".01" value=".1">
+
+&nbsp;Predator Dragginess <input id="kozDrag" type="range" name="drag" min=".00" max=".2" step=".01" value=".1">
+
+
+&nbsp;Prey Speed <input id="preySpeed" type="range" name="preyspeed" min=".3" max="5" step=".1" value="1">
+<br />
+
+
+ <button onclick="callUpdate()" value="Update">Update Settings</button>
+    <div id="window">
+        <canvas id="canvas" width="1400" height="700">
+        </canvas>
+    </div>
+
+
+
+</body>
+</html>
